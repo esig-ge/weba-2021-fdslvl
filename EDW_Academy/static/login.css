@@ -119,3 +119,18 @@ button {
 .erreurlogin{
   color:red;
 }
+
+#password {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#show {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
