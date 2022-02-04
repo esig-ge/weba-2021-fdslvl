@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3aaafbe1-3a89-47d6-82d7-e3cc136d7d25" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/EDW_Academy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EDW_Academy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/core/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/core/templates/ticket.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/templates/ticket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/userprofile/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userprofile/templates/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/userprofile/templates/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userprofile/templates/myaccount.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,16 +17,18 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JupyterTrust" id="72c7624e-3147-469b-b22c-36d72f195ec0" />
   <component name="ProjectId" id="21pIJTIf2XY0kB8R47nlQhcUMV7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -40,16 +42,15 @@
       <option name="presentableId" value="Default" />
       <updated>1638631531244</updated>
       <workItem from="1638631532482" duration="5903000" />
+      <workItem from="1639140389595" duration="3724000" />
+      <workItem from="1639573717128" duration="75000" />
+      <workItem from="1639747902764" duration="3559000" />
+      <workItem from="1643875465459" duration="6328000" />
+      <workItem from="1643961450272" duration="610000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="-1459" y="345" key="SettingsEditor" timestamp="1638631652090">
-      <screen x="-1920" y="160" width="1920" height="1080" />
-    </state>
-    <state x="-1459" y="345" key="SettingsEditor/0.0.2560.1440/-1920.160.1920.1080@-1920.160.1920.1080" timestamp="1638631652090" />
   </component>
 </project>
