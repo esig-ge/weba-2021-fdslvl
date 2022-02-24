@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3aaafbe1-3a89-47d6-82d7-e3cc136d7d25" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/userprofile/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userprofile/templates/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/userprofile/templates/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userprofile/templates/myaccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EDW_Academy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/EDW_Academy/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +43,9 @@
       <workItem from="1639573717128" duration="75000" />
       <workItem from="1639747902764" duration="3559000" />
       <workItem from="1643875465459" duration="6328000" />
-      <workItem from="1643961450272" duration="610000" />
+      <workItem from="1643961450272" duration="1259000" />
+      <workItem from="1644480274323" duration="4546000" />
+      <workItem from="1645689674637" duration="622000" />
     </task>
     <servers />
   </component>
