@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from apps.core.views import home, camps, games, courses, discover_camp, improve_camp, get_json_game_data, get_json_camp_data, ticket
+from apps.core.views import home, camps, games, courses, discover_camp, improve_camp, get_json_game_data, \
+    get_json_camp_data, ticket, customer, adminpage
 from apps.reservation.views import createOrder, ProductLandingPageViewCamp, chargeCamp, ProductLandingPageViewModule, chargeModule, createModule
 from apps.userprofile.views import loginView, signupView, myaccount, PasswordsChangeView, password_changed
 from apps.eventcalendar.views import calendarView
@@ -39,6 +40,8 @@ urlpatterns = [
     path('games/', games, name='games'),
     path('discover_camp', discover_camp, name='discover_camp'),
     path('improve_camp', improve_camp, name='improve_camp'),
+    path('adminpage/', customer, name='adminpage'),
+    path('adminpage/<str:email>', adminpage, name='customer'),
     # path('reservation/success/', success, name='success'),
 
     path('games-json/', get_json_game_data, name='games-json'),
