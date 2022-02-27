@@ -3,17 +3,6 @@
     <meta charset="UTF-8">
     <title>Admin page</title>
     <h2>Check customers information :</h2>
-
-{#    <style>#}
-{#        table, th, td {#}
-{#            border: 1px solid black;#}
-{#            border-collapse: collapse;#}
-{#        }#}
-{##}
-{#        th, td {#}
-{#            padding: 5px;#}
-{#        }#}
-{#    </style>#}
 <body>
     <select id="customerlist" onchange="showCustomer(this.value)">
         <option selected disabled="true" class="dropdownlist">Click here to choose a customer</option>
@@ -34,6 +23,7 @@
 
 <script>
     function showCustomer(str) {
+
         const xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = function () {
