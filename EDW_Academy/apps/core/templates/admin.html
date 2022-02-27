@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Admin page</title>
+    <h2>Check customers information :</h2>
+
+{#    <style>#}
+{#        table, th, td {#}
+{#            border: 1px solid black;#}
+{#            border-collapse: collapse;#}
+{#        }#}
+{##}
+{#        th, td {#}
+{#            padding: 5px;#}
+{#        }#}
+{#    </style>#}
+<body>
+    <select id="customerlist" onchange="showCustomer(this.value)">
+        <option selected disabled="true" class="dropdownlist">Click here to choose a customer</option>
+        {% for c in customers %}
+            {% if c.is_admin %}
+                {{ c.hide }}
+            {% else %}
+                <option value="{{ c.email }}">{{ c.email }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    </br>
+    <div id="txtHint">Customer info will be listed here...</div>
+
+</body>
+</html>
+
+<script>
+
+</script>
