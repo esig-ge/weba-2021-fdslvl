@@ -33,5 +33,16 @@
 </html>
 
 <script>
+    function showCustomer(str) {
+        const xhttp = new XMLHttpRequest();
 
+        xhttp.onreadystatechange = function () {
+            //this correspond à la requête http
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("txtHint").innerHTML = this.response;
+            }
+        };
+        xhttp.open('GET', /adminpage/ + str, true);
+        xhttp.send();
+    }
 </script>
