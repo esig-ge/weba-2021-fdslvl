@@ -33,6 +33,13 @@ def customer(request):
     return render(request, "admin.html", context)
 
 
+def adminpage(request, *args, **kwargs):
+    selected_customer = kwargs.get('email')
+    users = User.objects.filter(email=selected_customer).values('username','first_name', 'last_name',
+                                                                'email', 'birth_date', 'is_active')
+    users_list = list(users)
+    return JsonResponse(users_list, safe=False)
+
 
 def camps(request):
     return render(request, 'camps.html')
