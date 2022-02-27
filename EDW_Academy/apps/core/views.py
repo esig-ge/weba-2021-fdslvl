@@ -40,6 +40,7 @@ def adminpage(request, *args, **kwargs):
     users = User.objects.filter(email=selected_customer).values('username','first_name', 'last_name',
                                                                 'email', 'birth_date', 'is_active')
     users_list = list(users)
+    time.sleep(3)
     return JsonResponse(users_list, safe=False)
 
 
