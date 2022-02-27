@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from EDW_Academy import settings
 from apps.core import forms
 from apps.eventcalendar.models import Camp, Module
+from apps.userprofile.models import User
 from apps.core.models import Game, Ticket
 from django.http import JsonResponse
 from apps.reservation.views import createModule
@@ -25,6 +26,12 @@ def ticket(request):
 
 def home(request):
     return render(request, 'home.html')
+
+
+def customer(request):
+    context = {'customers': User.objects.all()}
+    return render(request, "admin.html", context)
+
 
 
 def camps(request):
