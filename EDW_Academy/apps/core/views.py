@@ -35,13 +35,20 @@ def customer(request):
     return render(request, "admin.html", context)
 
 
-def adminpage(request, *args, **kwargs):
-    selected_customer = kwargs.get('email')
-    users = User.objects.filter(email=selected_customer).values('username','first_name', 'last_name',
-                                                                'email', 'birth_date', 'is_active')
-    users_list = list(users)
-    time.sleep(3)
-    return JsonResponse(users_list, safe=False)
+# def adminpage(request, *args, **kwargs):
+#     selected_customer = kwargs.get('email')
+#     users = User.objects.filter(email=selected_customer).values('username', 'first_name', 'last_name',
+#                                                                 'email', 'birth_date', 'is_active')
+#     # time.sleep(3)
+#     return JsonResponse(users)
+
+
+def adminpageview(request, email):
+    user = User.objects.get(email=email)
+    client = {'name': user.first_name, 'lastname': user.last_name, 'email': user.email, 'birthdate': user.birth_date, 'active' : user.is_active}
+    print(client)
+    # time.sleep(3)
+    return JsonResponse({'client': client})
 
 
 def camps(request):

@@ -1,0 +1,19 @@
+#customerlist {
+    margin-top: 200px;
+    margin-left:45%;
+}
+
+#txtHint{
+    margin-left:45%;
+    margin-bottom: 50%;
+    margin-top:15px;
+    color:white;
+}
+
+th {
+  text-align: left;
+}
+
+p {
+    color:yellow;
+}

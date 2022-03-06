@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <meta charset="UTF-8">
-    <title>Admin page</title>
-    <h2>Check customers information :</h2>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'admin.css' %}">
+
+    <body>
     <select id="customerlist" onchange="showCustomer(this.value)">
         <option selected disabled="true" class="dropdownlist">Click here to choose a customer</option>
         {% for c in customers %}
@@ -18,21 +20,42 @@
     </br>
     <div id="txtHint">Customer info will be listed here...</div>
 
-</body>
-</html>
+    </body>
+    </html>
 
-<script>
-    function showCustomer(str) {
+{% endblock %}
 
-        const xhttp = new XMLHttpRequest();
+{% block scripts %}
 
-        xhttp.onreadystatechange = function () {
-            //this correspond à la requête http
-            if (this.readyState === 4 && this.status === 200) {
-                document.getElementById("txtHint").innerHTML = this.response;
-            }
-        };
-        xhttp.open('GET', /adminpage/ + str, false);
-        xhttp.send();
-    }
-</script>
+    <script>
+        function showCustomer(str) {
+
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+
+                if (this.readyState === 4 && this.status === 200) {
+                    const response = JSON.parse(this.responseText);
+                    document.getElementById('txtHint').innerHTML =
+                        '<table>' +
+                        '<tr>' +
+                        '<th>' + '<p>Name : </p>' + response.client.name + '</th>' +
+                        '<tr>' +
+                        '<th>' + '<p>Last Name : </p>' + response.client.lastname + '</th>' +
+                        '<tr>' +
+                        '<th>' + '<p>Email : </p>' + response.client.email + '</th>' +
+                        '<tr>' +
+                        '<th>' + '<p>Birthdate : </p>' + response.client.birthdate + '</th>' +
+                        '<tr>' +
+                        '<th>' + '<p>Active : </p>' + response.client.active + '</th>' +
+                        '</tr>' +
+                        '</table>';
+                }
+            };
+
+            xhttp.open('GET', /adminpage/ + str, true);
+            xhttp.send();
+        }
+
+    </script>
+{% endblock %}

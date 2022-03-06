@@ -3,7 +3,8 @@
 
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" sizes="16x16" href="https://edelweiss.gg/wp-content/themes/edelweiss/assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="https://edelweiss.gg/wp-content/themes/edelweiss/assets/images/favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,10 @@
     {% block extrahead %}{% endblock %}
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            {% if user.is_authenticated %}
-                <nav>
+<div class="wrapper">
+    <header>
+        {% if user.is_authenticated %}
+            <nav>
                 <div class="logo">
                     <a href="{% url 'home' %}"><img src="{% static 'media/Edelweiss-Logo-Blanc.png' %}" alt=""></a>
                 </div>
@@ -26,6 +27,9 @@
                         <li class="categories"><a href="{% url 'games' %}">GAMES</a></li>
                         <li class="categories"><a href="{% url 'courses' %}">COURSES</a></li>
                         <li class="categories"><a href="{% url 'camps' %}">CAMPS</a></li>
+                        {% if user.is_admin %}
+                            <li class="categories"><a href="{% url 'adminpage' %}">ADMIN</a></li>
+                        {% endif %}
                         <li class="login">
                             <div onclick="location.href='{% url 'myaccount' %}';" class="buttonlog" id="button-2">
                                 <div id="slide"></div>
@@ -34,13 +38,14 @@
                         </li>
                         <li class="login">
                             <div onclick="location.href='{% url 'logout' %}';" class="buttonlog" id="button-2">
-                            <div id="slide"></div>
-                            <a href="{% url 'logout' %}">LOGOUT</a>
-                        </div></li>
+                                <div id="slide"></div>
+                                <a href="{% url 'logout' %}">LOGOUT</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </nav>
-            {% else %}
+        {% else %}
             <nav>
                 <div class="logo">
                     <a href="{% url 'home' %}"><img src="{% static 'media/Edelweiss-Logo-Blanc.png' %}" alt=""></a>
@@ -53,27 +58,29 @@
                         <li class="categories"><a href="{% url 'camps' %}">CAMPS</a></li>
                         <li class="login">
                             <div onclick="location.href='{% url 'login' %}';" class="buttonlog" id="button-2">
-                            <div id="slide"></div>
-                            <a href="{% url 'login' %}">LOGIN</a>
-                        </div></li>
+                                <div id="slide"></div>
+                                <a href="{% url 'login' %}">LOGIN</a>
+                            </div>
+                        </li>
                         <li class="login">
                             <div onclick="location.href='{% url 'signup' %}';" class="buttonlog" id="button-2">
-                            <div id="slide"></div>
-                            <a href="{% url 'signup' %}">SIGN UP</a>
-                        </div></li>
+                                <div id="slide"></div>
+                                <a href="{% url 'signup' %}">SIGN UP</a>
+                            </div>
+                        </li>
 
                     </ul>
                 </div>
             </nav>
-            {% endif %}
-        </header>
-            {% block content %}
-            {% endblock %}
-    </div>
-    {% include 'footer.html' %}
-    {% block scripts %}
-
-
+        {% endif %}
+    </header>
+    {% block content %}
     {% endblock %}
+</div>
+{% include 'footer.html' %}
+{% block scripts %}
+
+
+{% endblock %}
 </body>
 </html>
