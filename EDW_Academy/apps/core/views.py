@@ -1,5 +1,6 @@
 import time
 
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 
@@ -28,27 +29,6 @@ def ticket(request):
 
 def home(request):
     return render(request, 'home.html')
-
-
-def customer(request):
-    context = {'customers': User.objects.all()}
-    return render(request, "admin.html", context)
-
-
-# def adminpage(request, *args, **kwargs):
-#     selected_customer = kwargs.get('email')
-#     users = User.objects.filter(email=selected_customer).values('username', 'first_name', 'last_name',
-#                                                                 'email', 'birth_date', 'is_active')
-#     # time.sleep(3)
-#     return JsonResponse(users)
-
-
-def adminpageview(request, email):
-    user = User.objects.get(email=email)
-    client = {'name': user.first_name, 'lastname': user.last_name, 'email': user.email, 'birthdate': user.birth_date, 'active' : user.is_active}
-    print(client)
-    # time.sleep(3)
-    return JsonResponse({'client': client})
 
 
 def camps(request):
@@ -141,3 +121,18 @@ def get_json_camp_data(request, *args, **kwargs):
     selected_game = kwargs.get('game')
     obj_camps = list(Camp.objects.filter(game__name=selected_game).values())
     return JsonResponse({'data': obj_camps})
+
+
+@login_required
+def customer(request):
+    context = {'customers': User.objects.all()}
+    return render(request, "admin.html", context)
+
+
+def adminpageview(request, email):
+    user = User.objects.get(email=email)
+    client = {'name': user.first_name, 'lastname': user.last_name, 'email': user.email, 'birthdate': user.birth_date,
+              'active': user.is_active}
+    print(client)
+    # time.sleep(3)
+    return JsonResponse({'client': client})
